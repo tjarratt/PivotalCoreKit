@@ -1,4 +1,5 @@
 #import "NSURLConnection+Spec.h"
+#import "FakeHTTPURLProtocol.h"
 #import "NSURLRequest+Spec.h"
 #import "NSURL+Spec.h"
 #import "PSHKFakeHTTPURLResponse.h"
