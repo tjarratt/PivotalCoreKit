@@ -1,3 +1,5 @@
+require 'tmpdir'
+
 CONFIGURATION = "Release"
 SDK_VERSION = "6.1"
 BUILD_DIR = File.join(File.dirname(__FILE__), "build")
@@ -52,6 +54,7 @@ end
 task :default => [:trim_whitespace, "all:spec"]
 task :cruise => ["all:clean", "all:build", "all:spec"]
 
+desc 'remove whitespace'
 task :trim_whitespace do
   system_or_exit(%Q[git status --short | awk '{if ($1 != "D" && $1 != "R") print $2}' | grep -e '.*\.[mh]$' | xargs sed -i '' -e 's/	/    /g;s/ *$//g;'])
 end
@@ -61,38 +64,47 @@ namespace :foundation do
 
   namespace :build do
     namespace :core do
+      desc 'build core Foundation+PCK for OS X'
       task :osx do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalCore -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:core:osx"))
       end
 
+      desc 'build core Foundation+PCK for iOS'
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:core:ios"))
       end
     end
 
+    desc 'build core Foundation+PCK'
     task :core => ["core:osx", "core:ios"]
 
     namespace :spec_helper do
+      desc 'build spec helper for Foundation+PCK OS X'
       task :osx do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper:osx"))
       end
 
+      desc 'build spec helper for Foundation+PCK iOS'
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper:ios"))
       end
     end
+
+    desc 'build spec helper for Foundation+PCK'
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
-    
+
     namespace :spec_helper_framework do
+      desc 'build spec helper framework for Foundation+PCK iOS'
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:build:spec_helper_framework:ios"))
       end
     end
+
     task :spec_helper_framework => ["spec_helper_framework:ios"]
-    
   end
 
   namespace :spec do
+    desc 'build and run specs for Foundation+PCK OS X'
     task :osx => ["build:core:osx", "build:spec_helper:osx"] do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target FoundationSpec -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:spec:osx"))
 
@@ -106,7 +118,7 @@ namespace :foundation do
       system_or_exit("cd #{build_dir}; ./FoundationSpec", env_vars)
     end
 
-    require 'tmpdir'
+    desc 'build and run specs for Foundation+PCK iOS'
     task :ios => ["build:core:ios", "build:spec_helper:ios"] do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Foundation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("foundation:spec:ios"))
 
@@ -128,15 +140,17 @@ namespace :foundation do
   task :clean do
     system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("foundation:clean"))
   end
-end
 
-task :foundation => ["foundation:build", "foundation:spec"]
+  desc 'Build Foundation+PCK and run specs'
+  task :foundation => ["foundation:build", "foundation:spec"]
+end
 
 namespace :uikit do
   project_name = "UIKit/UIKit"
 
   namespace :build do
     namespace :core do
+      desc 'build core UIKit+PCK'
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:core:ios"))
       end
@@ -145,17 +159,19 @@ namespace :uikit do
     task :core => ["core:ios"]
 
     namespace :spec_helper do
+      desc 'build spec helper for UIKit+PCK'
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios"))
       end
 
+      desc 'build stubs for UIKit+PCK'
       task :ios_stubs do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelperStubs-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper:ios_stubs"))
       end
     end
-    
+
     task :spec_helper => ["spec_helper:ios", "spec_helper:ios_stubs"]
-    
+
     namespace :spec_helper_framework do
       task :ios do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit+PivotalSpecHelper-iOS -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:build:spec_helper_framework:ios"))
@@ -170,7 +186,7 @@ namespace :uikit do
   end
 
   namespace :spec do
-    require 'tmpdir'
+    desc 'build and run specs for UIKit+PCK'
     task :ios => ["build:core:ios", "build:spec_helper:ios", "build:spec_helper:ios_stubs"] do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target UIKit-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("uikit:spec:ios"))
       `osascript -e 'tell application "iPhone Simulator" to quit'`
@@ -193,6 +209,7 @@ namespace :uikit do
   end
 end
 
+desc 'build UIKit+PCK and run specs'
 task :uikit => ["uikit:build", "uikit:spec"]
 
 namespace :core_location do
@@ -200,19 +217,22 @@ namespace :core_location do
 
   namespace :build do
     namespace :spec_helper do
+      desc 'build spec_helper for CoreLocation+PCK OS X'
       task :osx do
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation+PivotalSpecHelper -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:build:spec_helper:osx"))
       end
 
       task :ios do
+        desc 'build spec_helper for CoreLocation+PCK iOS'
         system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation+PivotalSpecHelper-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:build:spec_helper:ios"))
       end
     end
-    
+
     task :spec_helper => ["spec_helper:osx", "spec_helper:ios"]
   end
-  
+
   namespace :spec do
+    desc 'run specs for CoreLocation+PCK OS X'
     task :osx => ["build:spec_helper:osx"] do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocationSpec -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:spec:osx"))
 
@@ -224,7 +244,7 @@ namespace :core_location do
       system_or_exit("cd #{build_dir}; ./CoreLocationSpec", env_vars)
     end
 
-    require 'tmpdir'
+    desc 'run specs for CoreLocation+PCK iOS'
     task :ios => ["build:spec_helper:ios"] do
       system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target CoreLocation-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("core_location:spec:ios"))
       `osascript -e 'tell application "iPhone Simulator" to quit'`
@@ -247,11 +267,12 @@ namespace :core_location do
   end
 end
 
+desc 'build CoreLocation+PCK and run tests'
 task :core_location => ["core_location:build", "core_location:spec"]
 
+desc 'build and run all the tests'
 namespace :all do
   task :build => ["foundation:build", "uikit:build", "core_location:build"]
   task :spec => ["foundation:spec", "uikit:spec", "core_location:spec"]
   task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
 end
-
