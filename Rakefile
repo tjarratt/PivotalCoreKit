@@ -267,12 +267,70 @@ namespace :core_location do
   end
 end
 
-desc 'build CoreLocation+PCK and run tests'
+namespace :parsers do
+  project_name = 'Parsers/Parsers'
+
+  namespace :build do
+    desc 'build Parsers+PCK for OS X'
+    task :osx do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Parsers+PivotalCore -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("parsers:build:core:osx"))
+    end
+
+    desc 'build Parsers+PCK for iOS'
+    task :ios do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Parsers+PivotalCore-StaticLib -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("parsers:core:ios"))
+    end
+  end
+
+  namespace :spec do
+    desc 'run specs for Parsers+PCK OS X'
+    task :osx do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target ParsersSpec -configuration #{CONFIGURATION} build SYMROOT=#{BUILD_DIR}], {}, output_file("parsers:spec:osx"))
+
+      build_dir = build_dir("")
+      env_vars = {
+        "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
+        "IPHONE_SIMULATOR_ROOT" => sdk_dir,
+        "CFFIXED_USER_HOME" => Dir.tmpdir,
+        "DYLD_FRAMEWORK_PATH" => build_dir
+      }
+      system_or_exit("cd #{build_dir}; ./ParsersSpec", env_vars)
+    end
+
+    desc 'run specs for Parsers+PCK iOS'
+    task :ios do
+      system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -target Parsers-StaticLibSpec -configuration #{CONFIGURATION} ARCHS=i386 -sdk iphonesimulator build SYMROOT=#{BUILD_DIR}], {}, output_file("parsers:spec:ios"))
+
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+      env_vars = {
+        "DYLD_ROOT_PATH" => sdk_dir,
+        "CEDAR_REPORTER_CLASS" => "CDRColorizedReporter",
+        "IPHONE_SIMULATOR_ROOT" => sdk_dir,
+        "CFFIXED_USER_HOME" => Dir.tmpdir,
+        "CEDAR_HEADLESS_SPECS" => "1"
+      }
+      system_or_exit(%Q[#{File.join(build_dir("-iphonesimulator"), "Parsers-StaticLibSpec.app", "Parsers-StaticLibSpec")} -RegisterForSystemEvents], env_vars)
+      `osascript -e 'tell application "iPhone Simulator" to quit'`
+    end
+  end
+
+  task :build => ['build:osx', 'build:ios']
+  task :spec => ['spec:osx', 'spec:ios']
+  task :clean do
+    system_or_exit(%Q[xcodebuild -project #{project_name}.xcodeproj -alltargets -configuration #{CONFIGURATION} clean SYMROOT=#{BUILD_DIR}], output_file("parsers:clean"))
+  end
+end
+
+desc 'build CoreLocation+PCK and run specs'
 task :core_location => ["core_location:build", "core_location:spec"]
 
-desc 'build and run all the tests'
 namespace :all do
-  task :build => ["foundation:build", "uikit:build", "core_location:build"]
-  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec"]
-  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean"]
+  desc 'build all the projects'
+  task :build => ["foundation:build", "uikit:build", "core_location:build", "parsers:build"]
+
+  desc 'run all the specs'
+  task :spec => ["foundation:spec", "uikit:spec", "core_location:spec", "parsers:spec"]
+
+  desc 'clean all of the projects'
+  task :clean => ["foundation:clean", "uikit:clean", "core_location:clean", "parsers:clean"]
 end
