@@ -48,6 +48,51 @@
 		AE6E22771850089600EAF086 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3DE403184FFBAE005D8634 /* libxml2.dylib */; };
 		AE6E227918500A2800EAF086 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6E227818500A2800EAF086 /* libCedar-StaticLib.a */; };
 		AE984EA41851104D00FA4BFD /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE984EA31851104D00FA4BFD /* Cedar.framework */; };
+		AE984EC81851160B00FA4BFD /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EAF1851160B00FA4BFD /* NSURLConnectionSpec+Spec.mm */; };
+		AE984EC91851160B00FA4BFD /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EB11851160B00FA4BFD /* FakeOperationQueueSpec.mm */; };
+		AE984ECA1851160B00FA4BFD /* ConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EB31851160B00FA4BFD /* ConnectionDelegate.h */; };
+		AE984ECB1851160B00FA4BFD /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EB41851160B00FA4BFD /* ConnectionDelegate.m */; };
+		AE984ECC1851160B00FA4BFD /* FakeConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EB51851160B00FA4BFD /* FakeConnectionDelegate.h */; };
+		AE984ECD1851160B00FA4BFD /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EB61851160B00FA4BFD /* FakeConnectionDelegate.m */; };
+		AE984ECE1851160B00FA4BFD /* 200.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE984EB91851160B00FA4BFD /* 200.txt */; };
+		AE984ECF1851160B00FA4BFD /* 400.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE984EBA1851160B00FA4BFD /* 400.txt */; };
+		AE984ED01851160B00FA4BFD /* FixturesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EBB1851160B00FA4BFD /* FixturesHelper.m */; };
+		AE984ED11851160B00FA4BFD /* PCKConnectionBlockDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EBE1851160B00FA4BFD /* PCKConnectionBlockDelegateSpec.mm */; };
+		AE984ED21851160B00FA4BFD /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EBF1851160B00FA4BFD /* PCKConnectionDelegateWrapperSpec.mm */; };
+		AE984ED31851160B00FA4BFD /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC11851160B00FA4BFD /* PCKHTTPConnectionDelegateSpec.mm */; };
+		AE984ED41851160B00FA4BFD /* PCKHTTPConnectionOperationSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC21851160B00FA4BFD /* PCKHTTPConnectionOperationSpec.mm */; };
+		AE984ED51851160B00FA4BFD /* PCKHTTPConnectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC31851160B00FA4BFD /* PCKHTTPConnectionSpec.mm */; };
+		AE984ED61851160B00FA4BFD /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC41851160B00FA4BFD /* PCKHTTPInterfaceSpec.mm */; };
+		AE984ED71851160B00FA4BFD /* PCKResponseParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC61851160B00FA4BFD /* PCKResponseParserSpec.mm */; };
+		AE984ED81851160B00FA4BFD /* PCKXMLParserSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC71851160B00FA4BFD /* PCKXMLParserSpec.mm */; };
+		AE984EE61851162000FA4BFD /* PSHKFixtures.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EE01851162000FA4BFD /* PSHKFixtures.h */; };
+		AE984EE71851162000FA4BFD /* PSHKFixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EE11851162000FA4BFD /* PSHKFixtures.m */; };
+		AE984EF01851163C00FA4BFD /* PCKHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EE81851163C00FA4BFD /* PCKHTTPConnection.h */; };
+		AE984EF11851163C00FA4BFD /* PCKHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EE91851163C00FA4BFD /* PCKHTTPConnection.m */; };
+		AE984EF21851163C00FA4BFD /* PCKHTTPConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EEA1851163C00FA4BFD /* PCKHTTPConnectionDelegate.h */; };
+		AE984EF31851163C00FA4BFD /* PCKHTTPConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EEB1851163C00FA4BFD /* PCKHTTPConnectionDelegate.m */; };
+		AE984EF41851163C00FA4BFD /* PCKHTTPConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EEC1851163C00FA4BFD /* PCKHTTPConnectionOperation.h */; };
+		AE984EF51851163C00FA4BFD /* PCKHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EED1851163C00FA4BFD /* PCKHTTPConnectionOperation.m */; };
+		AE984EF61851163C00FA4BFD /* PCKHTTPInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984EEE1851163C00FA4BFD /* PCKHTTPInterface.h */; };
+		AE984EF71851163C00FA4BFD /* PCKHTTPInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EEF1851163C00FA4BFD /* PCKHTTPInterface.m */; };
+		AE984EF81851166700FA4BFD /* NSURLConnectionSpec+Spec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EAF1851160B00FA4BFD /* NSURLConnectionSpec+Spec.mm */; };
+		AE984EF91851166700FA4BFD /* FakeOperationQueueSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EB11851160B00FA4BFD /* FakeOperationQueueSpec.mm */; };
+		AE984EFA1851166700FA4BFD /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EB41851160B00FA4BFD /* ConnectionDelegate.m */; };
+		AE984EFB1851166700FA4BFD /* FakeConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984EB61851160B00FA4BFD /* FakeConnectionDelegate.m */; };
+		AE984EFC1851166700FA4BFD /* PCKConnectionBlockDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EBE1851160B00FA4BFD /* PCKConnectionBlockDelegateSpec.mm */; };
+		AE984EFD1851166700FA4BFD /* PCKConnectionDelegateWrapperSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EBF1851160B00FA4BFD /* PCKConnectionDelegateWrapperSpec.mm */; };
+		AE984EFE1851166700FA4BFD /* PCKHTTPConnectionDelegateSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC11851160B00FA4BFD /* PCKHTTPConnectionDelegateSpec.mm */; };
+		AE984EFF1851166700FA4BFD /* PCKHTTPConnectionOperationSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC21851160B00FA4BFD /* PCKHTTPConnectionOperationSpec.mm */; };
+		AE984F001851166700FA4BFD /* PCKHTTPConnectionSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC31851160B00FA4BFD /* PCKHTTPConnectionSpec.mm */; };
+		AE984F011851166700FA4BFD /* PCKHTTPInterfaceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE984EC41851160B00FA4BFD /* PCKHTTPInterfaceSpec.mm */; };
+		AE984F04185116F400FA4BFD /* PSHKObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984F02185116F400FA4BFD /* PSHKObserver.h */; };
+		AE984F05185116F400FA4BFD /* PSHKObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984F03185116F400FA4BFD /* PSHKObserver.m */; };
+		AE984F211851192A00FA4BFD /* NSURL+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984F1B1851192A00FA4BFD /* NSURL+Spec.h */; };
+		AE984F221851192A00FA4BFD /* NSURL+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984F1C1851192A00FA4BFD /* NSURL+Spec.m */; };
+		AE984F231851192A00FA4BFD /* NSURLConnection+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984F1D1851192A00FA4BFD /* NSURLConnection+Spec.h */; };
+		AE984F241851192A00FA4BFD /* NSURLConnection+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984F1E1851192A00FA4BFD /* NSURLConnection+Spec.m */; };
+		AE984F251851192A00FA4BFD /* NSURLRequest+Spec.h in Headers */ = {isa = PBXBuildFile; fileRef = AE984F1F1851192A00FA4BFD /* NSURLRequest+Spec.h */; };
+		AE984F261851192A00FA4BFD /* NSURLRequest+Spec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE984F201851192A00FA4BFD /* NSURLRequest+Spec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +159,41 @@
 		AE6E226D185007F500EAF086 /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSHKFixtures.m; path = SpecHelper/Fixtures/PSHKFixtures.m; sourceTree = "<group>"; };
 		AE6E227818500A2800EAF086 /* libCedar-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCedar-StaticLib.a"; path = "../Externals/Cedar/build/Release-iphoneos/libCedar-StaticLib.a"; sourceTree = "<group>"; };
 		AE984EA31851104D00FA4BFD /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = "../../../Library/Developer/Xcode/DerivedData/PivotalCoreKit-btmgwphkqesqbreewbubnfsftbss/Build/Products/Debug/Cedar.framework"; sourceTree = "<group>"; };
+		AE984EAF1851160B00FA4BFD /* NSURLConnectionSpec+Spec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSURLConnectionSpec+Spec.mm"; sourceTree = "<group>"; };
+		AE984EB11851160B00FA4BFD /* FakeOperationQueueSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FakeOperationQueueSpec.mm; sourceTree = "<group>"; };
+		AE984EB31851160B00FA4BFD /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		AE984EB41851160B00FA4BFD /* ConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDelegate.m; sourceTree = "<group>"; };
+		AE984EB51851160B00FA4BFD /* FakeConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeConnectionDelegate.h; sourceTree = "<group>"; };
+		AE984EB61851160B00FA4BFD /* FakeConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeConnectionDelegate.m; sourceTree = "<group>"; };
+		AE984EB91851160B00FA4BFD /* 200.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 200.txt; sourceTree = "<group>"; };
+		AE984EBA1851160B00FA4BFD /* 400.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 400.txt; sourceTree = "<group>"; };
+		AE984EBB1851160B00FA4BFD /* FixturesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixturesHelper.m; sourceTree = "<group>"; };
+		AE984EBE1851160B00FA4BFD /* PCKConnectionBlockDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKConnectionBlockDelegateSpec.mm; sourceTree = "<group>"; };
+		AE984EBF1851160B00FA4BFD /* PCKConnectionDelegateWrapperSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKConnectionDelegateWrapperSpec.mm; sourceTree = "<group>"; };
+		AE984EC11851160B00FA4BFD /* PCKHTTPConnectionDelegateSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPConnectionDelegateSpec.mm; sourceTree = "<group>"; };
+		AE984EC21851160B00FA4BFD /* PCKHTTPConnectionOperationSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPConnectionOperationSpec.mm; sourceTree = "<group>"; };
+		AE984EC31851160B00FA4BFD /* PCKHTTPConnectionSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPConnectionSpec.mm; sourceTree = "<group>"; };
+		AE984EC41851160B00FA4BFD /* PCKHTTPInterfaceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKHTTPInterfaceSpec.mm; sourceTree = "<group>"; };
+		AE984EC61851160B00FA4BFD /* PCKResponseParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKResponseParserSpec.mm; sourceTree = "<group>"; };
+		AE984EC71851160B00FA4BFD /* PCKXMLParserSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PCKXMLParserSpec.mm; sourceTree = "<group>"; };
+		AE984EE01851162000FA4BFD /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKFixtures.h; sourceTree = "<group>"; };
+		AE984EE11851162000FA4BFD /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKFixtures.m; sourceTree = "<group>"; };
+		AE984EE81851163C00FA4BFD /* PCKHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnection.h; sourceTree = "<group>"; };
+		AE984EE91851163C00FA4BFD /* PCKHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnection.m; sourceTree = "<group>"; };
+		AE984EEA1851163C00FA4BFD /* PCKHTTPConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionDelegate.h; sourceTree = "<group>"; };
+		AE984EEB1851163C00FA4BFD /* PCKHTTPConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionDelegate.m; sourceTree = "<group>"; };
+		AE984EEC1851163C00FA4BFD /* PCKHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPConnectionOperation.h; sourceTree = "<group>"; };
+		AE984EED1851163C00FA4BFD /* PCKHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPConnectionOperation.m; sourceTree = "<group>"; };
+		AE984EEE1851163C00FA4BFD /* PCKHTTPInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCKHTTPInterface.h; sourceTree = "<group>"; };
+		AE984EEF1851163C00FA4BFD /* PCKHTTPInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCKHTTPInterface.m; sourceTree = "<group>"; };
+		AE984F02185116F400FA4BFD /* PSHKObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHKObserver.h; sourceTree = "<group>"; };
+		AE984F03185116F400FA4BFD /* PSHKObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHKObserver.m; sourceTree = "<group>"; };
+		AE984F1B1851192A00FA4BFD /* NSURL+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Spec.h"; path = "SpecHelper/Extensions/NSURL+Spec.h"; sourceTree = "<group>"; };
+		AE984F1C1851192A00FA4BFD /* NSURL+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Spec.m"; path = "SpecHelper/Extensions/NSURL+Spec.m"; sourceTree = "<group>"; };
+		AE984F1D1851192A00FA4BFD /* NSURLConnection+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLConnection+Spec.h"; path = "SpecHelper/Extensions/NSURLConnection+Spec.h"; sourceTree = "<group>"; };
+		AE984F1E1851192A00FA4BFD /* NSURLConnection+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLConnection+Spec.m"; path = "SpecHelper/Extensions/NSURLConnection+Spec.m"; sourceTree = "<group>"; };
+		AE984F1F1851192A00FA4BFD /* NSURLRequest+Spec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+Spec.h"; path = "SpecHelper/Extensions/NSURLRequest+Spec.h"; sourceTree = "<group>"; };
+		AE984F201851192A00FA4BFD /* NSURLRequest+Spec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+Spec.m"; path = "SpecHelper/Extensions/NSURLRequest+Spec.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +264,13 @@
 		AE3DE3A4184FFAB5005D8634 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				AE984EAE1851160B00FA4BFD /* Extensions */,
+				AE984EB01851160B00FA4BFD /* Fakes */,
+				AE984EB21851160B00FA4BFD /* Fixtures */,
+				AE984EBC1851160B00FA4BFD /* Frameworks */,
+				AE984EBD1851160B00FA4BFD /* Helpers */,
+				AE984EC01851160B00FA4BFD /* Interfaces */,
+				AE984EC51851160B00FA4BFD /* Parsers */,
 				AE6E22561850020E00EAF086 /* iOS */,
 				AE6E22571850021300EAF086 /* OS X */,
 				AE6E224F185001F100EAF086 /* Parsers */,
@@ -220,6 +307,14 @@
 			isa = PBXGroup;
 			children = (
 				AE6E21E5184FFD5800EAF086 /* NSURLConnectionDelegate.h */,
+				AE984EE81851163C00FA4BFD /* PCKHTTPConnection.h */,
+				AE984EE91851163C00FA4BFD /* PCKHTTPConnection.m */,
+				AE984EEA1851163C00FA4BFD /* PCKHTTPConnectionDelegate.h */,
+				AE984EEB1851163C00FA4BFD /* PCKHTTPConnectionDelegate.m */,
+				AE984EEC1851163C00FA4BFD /* PCKHTTPConnectionOperation.h */,
+				AE984EED1851163C00FA4BFD /* PCKHTTPConnectionOperation.m */,
+				AE984EEE1851163C00FA4BFD /* PCKHTTPInterface.h */,
+				AE984EEF1851163C00FA4BFD /* PCKHTTPInterface.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -269,6 +364,13 @@
 		AE6E2260185004FB00EAF086 /* SpecHelper */ = {
 			isa = PBXGroup;
 			children = (
+				AE984F1B1851192A00FA4BFD /* NSURL+Spec.h */,
+				AE984F1C1851192A00FA4BFD /* NSURL+Spec.m */,
+				AE984F1D1851192A00FA4BFD /* NSURLConnection+Spec.h */,
+				AE984F1E1851192A00FA4BFD /* NSURLConnection+Spec.m */,
+				AE984F1F1851192A00FA4BFD /* NSURLRequest+Spec.h */,
+				AE984F201851192A00FA4BFD /* NSURLRequest+Spec.m */,
+				AE984EDF1851162000FA4BFD /* Fixtures */,
 				AE6E2263185007A400EAF086 /* Fakes */,
 				AE6E22621850079C00EAF086 /* Fixtures */,
 				AE6E22611850051B00EAF086 /* Parsers+PivotalSpecHelper.h */,
@@ -296,6 +398,100 @@
 			name = Fakes;
 			sourceTree = "<group>";
 		};
+		AE984EAE1851160B00FA4BFD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EAF1851160B00FA4BFD /* NSURLConnectionSpec+Spec.mm */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE984EB01851160B00FA4BFD /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EB11851160B00FA4BFD /* FakeOperationQueueSpec.mm */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
+		AE984EB21851160B00FA4BFD /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EB31851160B00FA4BFD /* ConnectionDelegate.h */,
+				AE984EB41851160B00FA4BFD /* ConnectionDelegate.m */,
+				AE984EB51851160B00FA4BFD /* FakeConnectionDelegate.h */,
+				AE984EB61851160B00FA4BFD /* FakeConnectionDelegate.m */,
+				AE984EB71851160B00FA4BFD /* FakeResponses */,
+				AE984EBB1851160B00FA4BFD /* FixturesHelper.m */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		AE984EB71851160B00FA4BFD /* FakeResponses */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EB81851160B00FA4BFD /* HelloWorld */,
+			);
+			path = FakeResponses;
+			sourceTree = "<group>";
+		};
+		AE984EB81851160B00FA4BFD /* HelloWorld */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EB91851160B00FA4BFD /* 200.txt */,
+				AE984EBA1851160B00FA4BFD /* 400.txt */,
+			);
+			path = HelloWorld;
+			sourceTree = "<group>";
+		};
+		AE984EBC1851160B00FA4BFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE984EBD1851160B00FA4BFD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE984F02185116F400FA4BFD /* PSHKObserver.h */,
+				AE984F03185116F400FA4BFD /* PSHKObserver.m */,
+				AE984EBE1851160B00FA4BFD /* PCKConnectionBlockDelegateSpec.mm */,
+				AE984EBF1851160B00FA4BFD /* PCKConnectionDelegateWrapperSpec.mm */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AE984EC01851160B00FA4BFD /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EC11851160B00FA4BFD /* PCKHTTPConnectionDelegateSpec.mm */,
+				AE984EC21851160B00FA4BFD /* PCKHTTPConnectionOperationSpec.mm */,
+				AE984EC31851160B00FA4BFD /* PCKHTTPConnectionSpec.mm */,
+				AE984EC41851160B00FA4BFD /* PCKHTTPInterfaceSpec.mm */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		AE984EC51851160B00FA4BFD /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EC61851160B00FA4BFD /* PCKResponseParserSpec.mm */,
+				AE984EC71851160B00FA4BFD /* PCKXMLParserSpec.mm */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		AE984EDF1851162000FA4BFD /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				AE984EE01851162000FA4BFD /* PSHKFixtures.h */,
+				AE984EE11851162000FA4BFD /* PSHKFixtures.m */,
+			);
+			name = Fixtures;
+			path = SpecHelper/Fixtures;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -303,10 +499,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE984EE61851162000FA4BFD /* PSHKFixtures.h in Headers */,
 				AE6E21DF184FFD4500EAF086 /* PCKXMLParser.h in Headers */,
 				AE6E21DA184FFD4500EAF086 /* PCKParser.h in Headers */,
+				AE984EF61851163C00FA4BFD /* PCKHTTPInterface.h in Headers */,
+				AE984F04185116F400FA4BFD /* PSHKObserver.h in Headers */,
 				AE6E21DB184FFD4500EAF086 /* PCKParserDelegate.h in Headers */,
+				AE984ECA1851160B00FA4BFD /* ConnectionDelegate.h in Headers */,
+				AE984EF41851163C00FA4BFD /* PCKHTTPConnectionOperation.h in Headers */,
+				AE984F211851192A00FA4BFD /* NSURL+Spec.h in Headers */,
+				AE984ECC1851160B00FA4BFD /* FakeConnectionDelegate.h in Headers */,
+				AE984EF21851163C00FA4BFD /* PCKHTTPConnectionDelegate.h in Headers */,
+				AE984EF01851163C00FA4BFD /* PCKHTTPConnection.h in Headers */,
+				AE984F251851192A00FA4BFD /* NSURLRequest+Spec.h in Headers */,
 				AE6E21E2184FFD4500EAF086 /* PCKXMLParserDelegate.h in Headers */,
+				AE984F231851192A00FA4BFD /* NSURLConnection+Spec.h in Headers */,
 				AE6E21DC184FFD4500EAF086 /* PCKResponseParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +624,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE984ECE1851160B00FA4BFD /* 200.txt in Resources */,
+				AE984ECF1851160B00FA4BFD /* 400.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,9 +643,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE984ECD1851160B00FA4BFD /* FakeConnectionDelegate.m in Sources */,
+				AE984ED41851160B00FA4BFD /* PCKHTTPConnectionOperationSpec.mm in Sources */,
+				AE984ED81851160B00FA4BFD /* PCKXMLParserSpec.mm in Sources */,
+				AE984F221851192A00FA4BFD /* NSURL+Spec.m in Sources */,
+				AE984EC81851160B00FA4BFD /* NSURLConnectionSpec+Spec.mm in Sources */,
+				AE984ED71851160B00FA4BFD /* PCKResponseParserSpec.mm in Sources */,
+				AE984ED21851160B00FA4BFD /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
 				AE6E21DD184FFD4500EAF086 /* PCKResponseParser.m in Sources */,
+				AE984F05185116F400FA4BFD /* PSHKObserver.m in Sources */,
+				AE984ED61851160B00FA4BFD /* PCKHTTPInterfaceSpec.mm in Sources */,
 				AE6E21E0184FFD4500EAF086 /* PCKXMLParser.m in Sources */,
+				AE984F241851192A00FA4BFD /* NSURLConnection+Spec.m in Sources */,
+				AE984ED31851160B00FA4BFD /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
+				AE984EF71851163C00FA4BFD /* PCKHTTPInterface.m in Sources */,
+				AE984EF51851163C00FA4BFD /* PCKHTTPConnectionOperation.m in Sources */,
+				AE984EE71851162000FA4BFD /* PSHKFixtures.m in Sources */,
+				AE984F261851192A00FA4BFD /* NSURLRequest+Spec.m in Sources */,
 				AE6E21E3184FFD4500EAF086 /* PCKXMLParserDelegate.m in Sources */,
+				AE984EF11851163C00FA4BFD /* PCKHTTPConnection.m in Sources */,
+				AE984EF31851163C00FA4BFD /* PCKHTTPConnectionDelegate.m in Sources */,
+				AE984ED51851160B00FA4BFD /* PCKHTTPConnectionSpec.mm in Sources */,
+				AE984ED01851160B00FA4BFD /* FixturesHelper.m in Sources */,
+				AE984ECB1851160B00FA4BFD /* ConnectionDelegate.m in Sources */,
+				AE984EC91851160B00FA4BFD /* FakeOperationQueueSpec.mm in Sources */,
+				AE984ED11851160B00FA4BFD /* PCKConnectionBlockDelegateSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,11 +685,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE984EF81851166700FA4BFD /* NSURLConnectionSpec+Spec.mm in Sources */,
+				AE984EF91851166700FA4BFD /* FakeOperationQueueSpec.mm in Sources */,
+				AE984EFA1851166700FA4BFD /* ConnectionDelegate.m in Sources */,
+				AE984EFB1851166700FA4BFD /* FakeConnectionDelegate.m in Sources */,
+				AE984EFC1851166700FA4BFD /* PCKConnectionBlockDelegateSpec.mm in Sources */,
+				AE984EFD1851166700FA4BFD /* PCKConnectionDelegateWrapperSpec.mm in Sources */,
+				AE984EFE1851166700FA4BFD /* PCKHTTPConnectionDelegateSpec.mm in Sources */,
+				AE984EFF1851166700FA4BFD /* PCKHTTPConnectionOperationSpec.mm in Sources */,
+				AE984F001851166700FA4BFD /* PCKHTTPConnectionSpec.mm in Sources */,
+				AE984F011851166700FA4BFD /* PCKHTTPInterfaceSpec.mm in Sources */,
+				AE6E22581850029E00EAF086 /* PCKResponseParserSpec.mm in Sources */,
+				AE6E225A185002A200EAF086 /* PCKXMLParserSpec.mm in Sources */,
 				AE6E226A185007EB00EAF086 /* PSHKFakeResponses.m in Sources */,
 				AE6E22701850081D00EAF086 /* PCKResponseParser.m in Sources */,
 				AE6E22221850012600EAF086 /* main.m in Sources */,
-				AE6E22581850029E00EAF086 /* PCKResponseParserSpec.mm in Sources */,
-				AE6E225A185002A200EAF086 /* PCKXMLParserSpec.mm in Sources */,
 				AE6E22731850082600EAF086 /* PCKXMLParserDelegate.m in Sources */,
 				AE6E22721850082600EAF086 /* PCKXMLParser.m in Sources */,
 				AE6E2268185007EB00EAF086 /* PSHKFakeHTTPURLResponse.m in Sources */,
@@ -501,12 +742,14 @@
 		AE3DE399184FFA10005D8634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "FIXTURES_DIR=$(PROJECT_DIR)/Spec/Fixtures";
 			};
 			name = Debug;
 		};
 		AE3DE39A184FFA10005D8634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "FIXTURES_DIR=$(PROJECT_DIR)/Spec/Fixtures";
 			};
 			name = Release;
 		};
