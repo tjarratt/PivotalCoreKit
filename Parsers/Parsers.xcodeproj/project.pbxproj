@@ -23,7 +23,6 @@
 		AE6E21E3184FFD4500EAF086 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E21D9184FFD4500EAF086 /* PCKXMLParserDelegate.m */; };
 		AE6E21E4184FFD4500EAF086 /* PCKXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E21D9184FFD4500EAF086 /* PCKXMLParserDelegate.m */; };
 		AE6E221A1850012500EAF086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3DE3DD184FFB0C005D8634 /* Foundation.framework */; };
-		AE6E22201850012600EAF086 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6E221F1850012600EAF086 /* Cedar.framework */; };
 		AE6E22221850012600EAF086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6E22211850012600EAF086 /* main.m */; };
 		AE6E222E1850013600EAF086 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6E222D1850013600EAF086 /* UIKit.framework */; };
 		AE6E222F1850013600EAF086 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3DE3DD184FFB0C005D8634 /* Foundation.framework */; };
@@ -48,6 +47,7 @@
 		AE6E22761850089000EAF086 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3DE403184FFBAE005D8634 /* libxml2.dylib */; };
 		AE6E22771850089600EAF086 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3DE403184FFBAE005D8634 /* libxml2.dylib */; };
 		AE6E227918500A2800EAF086 /* libCedar-StaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6E227818500A2800EAF086 /* libCedar-StaticLib.a */; };
+		AE984EA41851104D00FA4BFD /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE984EA31851104D00FA4BFD /* Cedar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +113,7 @@
 		AE6E226C185007F500EAF086 /* PSHKFixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSHKFixtures.h; path = SpecHelper/Fixtures/PSHKFixtures.h; sourceTree = "<group>"; };
 		AE6E226D185007F500EAF086 /* PSHKFixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSHKFixtures.m; path = SpecHelper/Fixtures/PSHKFixtures.m; sourceTree = "<group>"; };
 		AE6E227818500A2800EAF086 /* libCedar-StaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCedar-StaticLib.a"; path = "../Externals/Cedar/build/Release-iphoneos/libCedar-StaticLib.a"; sourceTree = "<group>"; };
+		AE984EA31851104D00FA4BFD /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = "../../../Library/Developer/Xcode/DerivedData/PivotalCoreKit-btmgwphkqesqbreewbubnfsftbss/Build/Products/Debug/Cedar.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6E22201850012600EAF086 /* Cedar.framework in Frameworks */,
+				AE984EA41851104D00FA4BFD /* Cedar.framework in Frameworks */,
 				AE6E221A1850012500EAF086 /* Foundation.framework in Frameworks */,
 				AE6E22761850089000EAF086 /* libxml2.dylib in Frameworks */,
 			);
@@ -204,6 +205,7 @@
 		AE3DE3AE184FFAEA005D8634 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE984EA31851104D00FA4BFD /* Cedar.framework */,
 				AE6E227818500A2800EAF086 /* libCedar-StaticLib.a */,
 				AE3DE403184FFBAE005D8634 /* libxml2.dylib */,
 				AE6E221F1850012600EAF086 /* Cedar.framework */,
@@ -351,7 +353,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE6E22251850012600EAF086 /* Build configuration list for PBXNativeTarget "ParsersSpec" */;
 			buildPhases = (
-				AE6E22151850012500EAF086 /* ShellScript */,
 				AE6E22161850012500EAF086 /* Sources */,
 				AE6E22171850012500EAF086 /* Frameworks */,
 			);
@@ -427,22 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AE6E22151850012500EAF086 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -R \"${TARGET_NAME}\"/Frameworks/Cedar.framework \"${BUILT_PRODUCTS_DIR}\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE3DE3A7184FFAE9005D8634 /* Sources */ = {
@@ -716,6 +701,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/pivotal/workspace/PivotalCoreKit/Parsers/ParsersSpec/Frameworks,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/PivotalCoreKit-btmgwphkqesqbreewbubnfsftbss/Build/Products/Debug",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -763,6 +749,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/pivotal/workspace/PivotalCoreKit/Parsers/ParsersSpec/Frameworks,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/PivotalCoreKit-btmgwphkqesqbreewbubnfsftbss/Build/Products/Debug",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
