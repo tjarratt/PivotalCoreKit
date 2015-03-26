@@ -80,6 +80,8 @@ def build_target(target, project: project, output_file: output_file)
 end
 
 task :default => [:trim_whitespace, "all:spec"]
+
+desc "Run specs as they do on travis-ci"
 task :travis => ["foundation:clean", "uikit:clean", "core_location:clean", "foundation:spec", "uikit:spec", "core_location:spec"]
 
 task :trim_whitespace do
